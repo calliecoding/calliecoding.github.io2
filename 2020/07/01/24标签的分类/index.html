@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>标签分类 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="标签分类 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="[TOC] 递归的特点可以看出递归可以大大缩短程序的代码，有意识的使用递归，可以用较短的代码解决一些复杂的问题。甚至有些问题非得使用递归解决不可。那么什么时候我们该使用递归呢？ 递归算法的基本思想是把规模大的、较难解决的问题变成规模较小的、易解决的同一问题。规模较小的问题又变成规模更小的问题，并且小到一定程度可以直接得出它的解，从而得到原来问题的解。  递归的三个使用条件： 解决办法相同,有规律,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="循环与递归的区别">
+<meta property="og:url" content="http://yoursite.com/2020/07/01/06.2%E6%8B%93%E5%B1%95-%E5%BE%AA%E7%8E%AF%E4%B8%8E%E9%80%92%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC] 递归的特点可以看出递归可以大大缩短程序的代码，有意识的使用递归，可以用较短的代码解决一些复杂的问题。甚至有些问题非得使用递归解决不可。那么什么时候我们该使用递归呢？ 递归算法的基本思想是把规模大的、较难解决的问题变成规模较小的、易解决的同一问题。规模较小的问题又变成规模更小的问题，并且小到一定程度可以直接得出它的解，从而得到原来问题的解。  递归的三个使用条件： 解决办法相同,有规律,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-30T20:09:02.000Z">
+<meta property="article:modified_time" content="2021-02-24T05:11:35.091Z">
+<meta property="article:author" content="Callie">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>Callie</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/calliecoding"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(6)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="工具">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        工具
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="工具<--->hexo">
+                                        
+                                        hexo
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        前端
+                        <small>(5)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="前端<--->css">
+                                        
+                                        css
+                                        
+                                            <small>(3
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="前端<--->html">
+                                        
+                                        html
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                                <li>
+                                    <div data-rel="前端<--->JS">
+                                        
+                                        JS
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="6">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>技巧</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>命令</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>优化</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>原理</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="全部文章 前端 JS "
+           href="/2020/07/01/06.2%E6%8B%93%E5%B1%95-%E5%BE%AA%E7%8E%AF%E4%B8%8E%E9%80%92%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="循环与递归的区别">循环与递归的区别</span>
+            <span class="post-date" title="2020-07-01 04:09:02">2020/07/01</span>
+        </a>
+        
+        <a  class="全部文章 前端 html "
+           href="/2020/07/01/24%E6%A0%87%E7%AD%BE%E7%9A%84%E5%88%86%E7%B1%BB/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="标签分类">标签分类</span>
+            <span class="post-date" title="2020-07-01 04:09:02">2020/07/01</span>
+        </a>
+        
+        <a  class="全部文章 前端 css "
+           href="/2020/07/01/first-article/"
+           data-tag="优化"
+           data-author="" >
+            <span class="post-title" title="first article">first article</span>
+            <span class="post-date" title="2020-07-01 04:09:02">2020/07/01</span>
+        </a>
+        
+        <a  class="全部文章 前端 css "
+           href="/2020/07/01/1123/css+html%E6%80%BB%E7%BB%93/"
+           data-tag="技巧"
+           data-author="" >
+            <span class="post-title" title="css+html技巧总结">css+html技巧总结</span>
+            <span class="post-date" title="2020-07-01 04:09:02">2020/07/01</span>
+        </a>
+        
+        <a  class="全部文章 前端 css "
+           href="/2020/07/01/1123/23.1!!%E5%A4%96%E8%BE%B9%E8%B7%9D%E5%90%88%E5%B9%B6/"
+           data-tag="原理"
+           data-author="" >
+            <span class="post-title" title="外边距合并">外边距合并</span>
+            <span class="post-date" title="2020-07-01 04:09:02">2020/07/01</span>
+        </a>
+        
+        <a  class="全部文章 工具 hexo "
+           href="/2020/07/01/1123/hello-world/"
+           data-tag="命令"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2020-07-01 04:01:58">2020/07/01</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-24标签的分类" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">标签分类</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;html">html</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2021-02-24 13:06:38'>2020-07-01 04:09</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#标签的分类"><span class="toc-text">标签的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#双-单标签"><span class="toc-text">双&#x2F;单标签:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按类型"><span class="toc-text">按类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#块级元素"><span class="toc-text">块级元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联元素"><span class="toc-text">内联元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联块元素"><span class="toc-text">内联块元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么区分块级-内联元素"><span class="toc-text">怎么区分块级&#x2F;内联元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按内容"><span class="toc-text">按内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按显示"><span class="toc-text">按显示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#替换元素"><span class="toc-text">替换元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非替元素"><span class="toc-text">非替元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签与元素的关系"><span class="toc-text">标签与元素的关系</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><div class='inner-toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#标签的分类"><span class="toc-text">标签的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#双-单标签"><span class="toc-text">双&#x2F;单标签:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按类型"><span class="toc-text">按类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#块级元素"><span class="toc-text">块级元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联元素"><span class="toc-text">内联元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联块元素"><span class="toc-text">内联块元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#怎么区分块级-内联元素"><span class="toc-text">怎么区分块级&#x2F;内联元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按内容"><span class="toc-text">按内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#按显示"><span class="toc-text">按显示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#替换元素"><span class="toc-text">替换元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#非替元素"><span class="toc-text">非替元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签与元素的关系"><span class="toc-text">标签与元素的关系</span></a></li></ol></li></ol></div></p>
+<h1 id="标签的分类"><a href="#标签的分类" class="headerlink" title="标签的分类"></a>标签的分类</h1><p><a href="http://www.html5star.com/manual/html5label-meaning/" target="_blank" rel="noopener">:link:</a>HTML5 标签含义之元素周期表</p>
+<h2 id="双-单标签"><a href="#双-单标签" class="headerlink" title="双/单标签:"></a>双/单标签:</h2><p><strong>双标签的特点</strong></p>
+<p>​    完整性,直接能知道其完整性,</p>
+<p>​    表意,每个标签的存在都是为了标记描述一个东西</p>
+<p><strong>单标签的特点</strong>:</p>
+<p>​    没有添加特定内容的区域,开始就结束了</p>
+<h2 id="按类型"><a href="#按类型" class="headerlink" title="按类型"></a>按类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	</span><br><span class="line">block : 块</span><br><span class="line">特性</span><br><span class="line">	</span><br><span class="line">inline : 内联</span><br><span class="line">特性</span><br><span class="line">	</span><br><span class="line">inline-block : 内联块</span><br><span class="line">特性</span><br></pre></td></tr></table></figure>
+
+<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">dispaly</span><span class="selector-pseudo">:block</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>​    <strong>常见块级元素</strong>  <code>div / dl / form / h1-h6 / ol / ul / p</code> </p>
+<p><strong>特点:</strong></p>
+<ol>
+<li>支持width,height</li>
+</ol>
+<p>​        如果没有设置width,默认继承父元素内容宽度</p>
+<p>​        如果没有设置height,高度可以由内容撑开</p>
+<p>​        当width,height固定时,即使内容出盒子,也都不会撑开盒子的大小</p>
+<ol start="2">
+<li><p><em>独占一行</em></p>
+</li>
+<li><p>支持margin padding </p>
+</li>
+<li><p>所占区域是一个矩形</p>
+</li>
+</ol>
+<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">dispaly</span><span class="selector-pseudo">:inline</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>常见行内元素</strong>   <code>a /input /span</code>,<em>img是特殊的行内元素</em></p>
+<p><strong>特性:</strong></p>
+<ol>
+<li><p>温柔<em>,只占自己的位置</em>,支持多个横排显示</p>
+</li>
+<li><p><em>不支持width,height,由内容撑开</em></p>
+<p>​    即使设置了宽高,也不一定能撑开</p>
+<p>​    由内容撑开width,height,如果没有内容就不显示</p>
+</li>
+<li><p><em>支持margin,仅左右有效</em>,上下无效,不支持auto</p>
+</li>
+<li><p>支持padding,<em>左右padding有效,上下padding仅对自身有效</em>,对上下元素没有影响</p>
+</li>
+<li><p>所占的区域不一定是矩形（参考半行文字）</p>
+</li>
+<li><p>内联标签之间会自动解析空格,在网页显示空隙 </p>
+<p>原因：换行产生的 （但也不用解决，因为内联标签只用于文本，不用于布局）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/calliecoding/ImageHosting/Pic/Html+CSS/20210224130407.png" alt=""></p>
+</li>
+<li><p>存在<em>基线对齐</em>问题(有待后续课堂解决)</p>
+</li>
+</ol>
+<p><em>其中img,input元素具备行内块元素的特性</em></p>
+<p>注：布局一般用块标签，修饰文本一般用内联标签</p>
+<h3 id="内联块元素"><a href="#内联块元素" class="headerlink" title="内联块元素"></a>内联块元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">dispaly</span><span class="selector-pseudo">:inline-block</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong><u>类似</u>行内块元素</strong> : img / input </p>
+<p><strong>特性:</strong></p>
+<ol>
+<li><p><em>只占自己的位置</em>,横排显示</p>
+</li>
+<li><p><em>支持宽高</em></p>
+<p>​    不给宽度时,由内容撑开</p>
+</li>
+<li><p><em>支持margin,但不支持margin auto</em></p>
+</li>
+<li><p>支持padding</p>
+</li>
+<li><p>会<em>解析空格</em></p>
+</li>
+<li><p><em>存在基线对齐问题</em></p>
+</li>
+</ol>
+<p>解决办法:使用浮动标签,解决特性</p>
+<h3 id="怎么区分块级-内联元素"><a href="#怎么区分块级-内联元素" class="headerlink" title="怎么区分块级/内联元素"></a>怎么区分块级/内联元素</h3><p>​    方法一:有开发者工具里面的computed模块的display属性决定</p>
+<p>​    方法二:在审查元素中显示橙色块区</p>
+<p>​    方法三:行内元素不加载设定好的宽度和高度</p>
+<h2 id="按内容"><a href="#按内容" class="headerlink" title="按内容"></a>按内容</h2><p><img src="https://cdn.jsdelivr.net/gh/calliecoding/ImageHosting/Pic/Html+CSS/image-20200913233904051.png" alt="image-20200913233904051"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Flow：流内容</span><br><span class="line">Metadata：元数据</span><br><span class="line">Sectioning：分区</span><br><span class="line">Heading：标题</span><br><span class="line">Phrasing：措辞（文本修饰）</span><br><span class="line">Embedded：嵌入的（如img，audio）</span><br><span class="line">Interactive：互动的（输入框，下拉菜单</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="按显示"><a href="#按显示" class="headerlink" title="按显示"></a>按显示</h2><h3 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h3><ul>
+<li>定义<ul>
+<li>浏览器根据元素的标签和属性，来决定元素的具体显示内容。</li>
+<li>需要属性，才能显示<ul>
+<li>如img没有src的时候是不显示的，有src才显示</li>
+</ul>
+</li>
+<li>能通过属性修改元素的属性来替换页面中的元素<ul>
+<li>如img标签通过src属性,更改显示的图片</li>
+</ul>
+</li>
+<li>img是inline也是替换元素，具备替换元素的特性，支持宽高属性</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>有自己的默认width和height,并且可以设置width和height</li>
+<li>支持margin,padding,不支持auto</li>
+</ul>
+</li>
+<li>如<code>img</code>,<code>input</code>,<code>video</code>,<code>audio</code><ul>
+<li>video中的controls属性可以掉出视频组件</li>
+<li>audio默认<code>display:none</code></li>
+<li>input可以通过type属性,更改input的功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="非替元素"><a href="#非替元素" class="headerlink" title="非替元素"></a>非替元素</h3><ul>
+<li>定义<ul>
+<li>不能通过修改元素的属性来替换页面中的元素</li>
+<li>将内容直接告诉浏览器，将其显示出来。</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>没有自己的默认width和height</li>
+</ul>
+</li>
+<li>如<code>div</code>,<code>p</code>    </li>
+</ul>
+<h2 id="标签与元素的关系"><a href="#标签与元素的关系" class="headerlink" title="标签与元素的关系"></a>标签与元素的关系</h2><p>元素 = 开始标签+内容+结束标签</p>
+<p><img src="https://cdn.jsdelivr.net/gh/calliecoding/ImageHosting/Pic/Html+CSS/20210224130408.png" alt=""></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证。 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Callie&#39;sBlog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
