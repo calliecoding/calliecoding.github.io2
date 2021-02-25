@@ -1,6 +1,10 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
     <% if (post.title){ %>
         <h1 class="article-title"><%= post.title %></h1>
+        <div>
+            <a href="https://github.com/calliecoding/calliecoding.github.io/edit/myblog/source/<%- page.source %>"
+                target="blank">编辑</a>
+        </div>
     <% } %>
     <div class="article-meta">
         <% if (post.top){ %>
